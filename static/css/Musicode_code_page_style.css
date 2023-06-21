@@ -1,0 +1,64 @@
+html{background: url('/static/images/map-img.png') no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
+
+body{background-color: rgb(0,0,0); background-color: rgba(0,0,0, 0.2); backdrop-filter: blur(4px); height: 100%; width: 100%; max-width: 970px; margin: auto; margin-bottom: 50px; display: flex; align-items: center; padding-top: 1.5em; flex-direction: column;}
+
+.header{color: white; font-family: Verdana, Arial, sans-serif; font-size:3vmin;}
+
+.header-logo h1{display: inline; width: fit-content;}
+
+.logo{max-width: 40%; height: auto; margin-bottom: 15px;}
+
+.header-text{margin-left: 1.5em;}
+
+.header-list{margin-left: 2.5em; border-left-style: solid;}
+
+.list-item{list-style-type: square;}
+
+.page-files{margin-top: 1.5em; width: 75%; height: auto; color: white; margin-bottom: 15px;}
+
+.services{display: flex; justify-content: space-evenly;}
+
+.services-input{font-family: Verdana, Arial, sans-serif; text-decoration: none; cursor: default;}
+
+.services-input input{border: none; border-top-left-radius:20px; border-top-right-radius:20px;-moz-box-shadow: inset 0 -4px -7px -10px #000000d2; -webkit-box-shadow: inset 0 -10px 10px -10px #0000007b; box-shadow: inset 0 -10px 10px -10px #000000; background-color: rgb(176,196,222); color: white; cursor: pointer; font-size: 18px; transition: ease;}
+
+.services-input input:hover{background-color: rgb(0,191,255); box-shadow: none;}
+
+#code-file input{background-color: rgb(0,191,255); box-shadow: none;}
+
+.files-action{border-style: solid;}
+
+.upload-clear{display: flex; justify-content: space-evenly; margin-top: 25px;}
+
+#file{display: none;}
+
+.input-files{background: #6495ED; display: flex; justify-content: space-around; align-items: center; font-family: Verdana, Arial, sans-serif; border-radius: 4px; height: 2.5em; width: 150px; font-size: 16px; cursor: pointer; transition: ease;}
+
+.input-files:hover{background-color: #1E90FF;}
+
+.files-action button{display: flex; justify-content: space-around; align-items: center; border-radius: 5px; border: none; height: 2.5em; width: 150px; font-size: 16px; font-family: Verdana, Arial, sans-serif; color: white; cursor: pointer; transition: ease;}
+
+.files-action button:disabled{background-color: gray; color: #000000; cursor:default;}
+
+.clear-button{background-color: #7B68EE;}
+
+.clear-button:hover:enabled{background-color: #CC00CC;}
+
+.download-button{background-color: #5F9EA0;}
+
+.download-button:hover:enabled{background-color: #088F8F;}
+
+.download{display: flex; justify-content: center; align-items: center; margin-top: 40px; margin-bottom: 15px;}
+
+.download a{text-decoration: none;}
+
+.upload-clear a{text-decoration: none;}
+
+@media screen and (max-width: 970px){
+    body{padding-left: 10px; padding-right: 10px; width: 90%;}
+
+    .logo{max-width: 50%; height: auto;}
+
+    .logo:hover{max-width: 51%;}
+}
+

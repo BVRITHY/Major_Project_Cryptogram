@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cipher</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/Musicode_decode_page_style.css') }}">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+    <body>
+
+
+<!--Navbar start-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand ml-5 " href="/home">
+        <a href="/home"><img src="../static/img/Cipher_Logo_FINAL.png" width="148px" height="42px" alt="Brunch Template"></a>
+          
+      </a>
+      <a style="margin-left: 775%;" class="navbar-brand ml-5 " href="/login"> Sign Out </a>
+    </nav>
+  <!--Navbar end-->
+        <header class="header">
+            
+                <h1>
+                    <img src="{{ url_for('static', filename='images/logo.png') }}" class="logo" alt="Musicode">
+                </h1>
+            </a>
+
+            <p class="header-text">
+                Easily encrypt and decrypt audio files. 
+                No limit in file size, no registrations, no watermark. 
+                This service automatically encrypts and decrypts audio files.
+                When crypting you will receive a zip file - the encrypted version of yours, and a key file for future decrypting.
+                When decrypting you will receive a new file - the decrypted version of yours.
+            </p>
+
+            <div class="header-list">
+                <ul>
+                    <li class="list-item">
+                        <p>First choose if you want to crypt or decrypt audio files!</p>
+                    </li>
+                    
+                    <li class="list-item">
+                        <p>Then click UPLOAD ZIP to upload a zip file downloaded by the encrypt page!</p>
+                    </li>
+                    
+                    <li class="list-item">
+                        <p>Then click on DOWNLOAD!</p>
+                    </li>
+                </ul>
+            </div>
+        </header>
+
+        <main class="page-files">
+            <div class="services">
+                <a id="code-file" class="services-input" href="{{ url_for('code_page', filename='Musicode_code_page.html') }}">
+                    <input type="submit" type="button" value="Crypt Audio Files"/>
+                </a>
+
+                <a id="decode-file" class="services-input" href="{{ url_for('decode_page', filename='Musicode_decode_page.html') }}">
+                    <input type="submit" value="Decrypt Audio Files"/>
+                </a>
+            </div>
+
+            <div class="files-action">
+
+                <form method="post" action="/decrypt" enctype="multipart/form-data" id="upload-form">
+                    <input type="file" name="file" id="file" accept=".zip,.rar,.7zip" onchange="Submit()" required>
+                </form>
+
+                <div class="upload-clear">
+                    <label class="input-files" for="file"><i id="fa-fa-upload" class="fa fa-upload"></i>UPLOAD ZIP</label>
+                    <a href="{{ url_for('delete_files_decrypt')}}"><button class="clear-button" type="button"><i class="fa fa-close"></i>CLEAR FILES</button></a>
+                </div>
+                
+                <div class="download">
+                    <a href="{{ url_for('download_decrypt')}}"><button class="download-button" type="button"><i class="fa fa-download"></i>DOWNLOAD</button></a>
+                </div>
+                <br>
+                        <p ><label style="font-size: x-large;color:black;" name='answer'>Accuracy: {{ acc }}</label><br /></p>
+                        <br>
+            </div>
+        </main>
+
+        <script src="{{ url_for('static', filename='scripts/Success.js') }}"></script>
+    </body>
+</html>
